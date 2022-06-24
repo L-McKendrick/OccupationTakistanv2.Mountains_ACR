@@ -1,5 +1,5 @@
 author = "McKendrick"; // Author
-onLoadName = "Occupation: Takistan (WIP)";
+onLoadName = "Occupation: Takistan";
 onLoadMission = "Security Forces attempt to indentify which civilians are supporters while Insurgent Forces attempt to eliminate them. Version: 2.02";
 //loadScreen = "load.paa";
 //briefingName = "Occupation: Takistan v2.0";
@@ -19,7 +19,7 @@ class Header
 	maxPlayers = 40;
 };
 
-//disabledAI = 1;
+disabledAI = 1;
 
 class Params
 {
@@ -73,4 +73,22 @@ class CfgDebriefing
 class cfgFunctions 
 {
 	#include "Functions\cfgFunctions.hpp"
+};
+
+class CfgSfx 
+{
+	class ArabicCountryside
+	{
+		sound0[] = {"sounds\CountrysideEgypt.ogg", db+11, 1.0, 1000, 1, 1, 2, 3};
+		sounds[] = {sound0};
+		empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
+	};
+};
+
+class CfgVehicles
+{
+	class ArabicCountrysideSound
+	{
+		sound = "ArabicCountryside"; // reference to CfgSFX class
+	};
 };
