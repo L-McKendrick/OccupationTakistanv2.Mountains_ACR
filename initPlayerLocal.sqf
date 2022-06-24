@@ -27,6 +27,21 @@ if (!gameStarted) then {
 	player addEventHandler ["HandleRating", { 0 }]; // Disable rating system.
 	player addEventHandler ["HandleScore", {false}]; // Disable scoreboard update.
 
+	player addEventHandler ["Take", {
+		params ["_unit", "_container", "_item"];
+		if (_item == "Money") then { 
+				player removeItem _item;
+			if (side player == sideSecurity) then {
+				_container addMagazineCargoGlobal ["Money",1];
+				["Better not take the locals' money...", "PLAIN DOWN"] call occupation_fnc_displayText;
+			} else {
+				private _num = [(random [1, 50, 100]),0] call BIS_fnc_cutDecimals;
+				myMoney = myMoney + _num;
+				[("+ $" + str _num), "PLAIN DOWN"] call occupation_fnc_displayText;
+			};
+		};
+	}]; 
+
 	player addEventHandler ["Fired", {
 	if ( (_this select 2) isEqualTo "HandGrenade_Stone" ) then
 		{
