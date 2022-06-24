@@ -32,6 +32,7 @@ _txt = "
 	<br></br>	 - 'Purchase Success' text along with price when buying something from a shop.
 	<br></br>    - Briefing tab for role info.
 	<br></br>    - Ambient AfghanPrayer1 noise.
+	<br></br>    - Random cash piles around that map that can be picked up by non-Security players.
 	<br></br>
 	<br></br> Improved:
 	<br></br>    - Unlocked free cam and view options when in ACE Spectator.
@@ -44,6 +45,7 @@ _txt = "
 	<br></br> Fixed:
 	<br></br>    - Some players not able to take damage.
 	<br></br>    - CBA option for 'Enable Team Management' incorrectly enabled.
+	<br></br>    - End of game karma points being applied to those who joined late/spectated.
 	<br></br>    - INSURGENTs and CIVILIANs were unable to see eachother's names.
 	<br></br>    - INSURGENTs and CIVILIANs were unable to see eachother's names.
 	<br></br>    - CIVILIANs who joined the INSURGENT were still in array of innocent CIVILIANs.
