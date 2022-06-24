@@ -2,6 +2,8 @@ waitUntil {!isNull player};
 
 if (!(isDedicated)) then {
 	player addEventHandler ["inventoryOpened","_nul=execVM 'scripts\inventoryCheck.sqf'"];
+
+	if (paramsArray select 3 == 1) then { [0, false, true] call occupation_fnc_updateKarma; }; // Reset Karma param
 };
 
 ["en","English"] call acre_api_fnc_babelAddLanguageType;
