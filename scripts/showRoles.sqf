@@ -39,6 +39,6 @@ switch (side player) do {
 
 [_txt + "\nKarma: " + _karma] call occupation_fnc_displayText;
 
-player createDiaryRecord ["Diary",["Info", (_txt + "<br></br>Starting Karma: " + _karma)]];
+player createDiaryRecord ["Diary",["Info", (_txt + "<br></br>Starting Karma: " + _karma + "<br></br>Starting Cash: $" + str myMoney)]];
 
  

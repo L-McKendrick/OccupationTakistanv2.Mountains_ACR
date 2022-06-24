@@ -31,8 +31,9 @@ _txt = "
 	<br></br>    - Mosin, Lee Enfield, M1 Garand, Ak-47, AKM, and Browning HP to INSURGENT shop.
 	<br></br>	 - 'Purchase Success' text along with price when buying something from a shop.
 	<br></br>    - Briefing tab for role info.
-	<br></br>    - Ambient AfghanPrayer1 noise.
+	<br></br>    - Ambient AfghanPrayer1 and ArabicCountryside noise.
 	<br></br>    - Random cash piles around that map that can be picked up by non-Security players.
+	<br></br>    - Mission parameter option to reset all player's karma.
 	<br></br>
 	<br></br> Improved:
 	<br></br>    - Unlocked free cam and view options when in ACE Spectator.
