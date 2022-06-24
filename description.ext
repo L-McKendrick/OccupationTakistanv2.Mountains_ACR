@@ -1,0 +1,76 @@
+author = "McKendrick"; // Author
+onLoadName = "Occupation: Takistan (WIP)";
+onLoadMission = "Security Forces attempt to indentify which civilians are supporters while Insurgent Forces attempt to eliminate them. Version: 2.02";
+//loadScreen = "load.paa";
+//briefingName = "Occupation: Takistan v2.0";
+overviewPicture = "load.paa";
+disableChannels[] = {0};
+
+respawn=3;
+respawnOnStart=-1;
+respawnDelay=9999;
+
+respawnTemplates[] = { "ace_spectator"}; 
+
+class Header
+{
+	gameType =  TDM;
+	minPlayers =  6;
+	maxPlayers = 40;
+};
+
+//disabledAI = 1;
+
+class Params
+{
+	class Daytime
+	{
+		title = "Time";
+		texts[] = {"Morning","Day","Evening","Night","Random"};
+		values[] = {10,18,0,6,-1};
+		default = 18;
+		isGlobal = 0;
+	};
+	class Countdown
+	{
+		title = "Time Avaliable";
+		values[] = {600,900,1200,1800};
+		texts[] = {"10 Minutes","15 Minutes","20 Minutes","30 Minutes"}; // Description of each selectable item
+		default = 900;
+	};
+	class PriceCoeff
+	{
+		title = "Shop Price Multiplier";
+		values[] = {0.25,0.5,0.75,1,1.25,1.5,2};
+		texts[] = {"0.25", "0.5", "0.75", "1.0", "1.25", "1.5", "2.0"};
+		default = 1;
+	};
+};
+
+
+class CfgDebriefing
+{  
+	class bluforWin
+	{
+		title = "Security Forces Win";
+		subtitle = "Insurgent Forces eliminated";
+	};
+	class timerWin
+	{
+		title = "Nobody Wins";
+		subtitle = "Time expired";
+	};
+	class opforWin
+	{
+		title = "Insurgents Win";
+		subtitle = "Security Forces eliminated";
+	};
+};
+
+#include "UI\defines.hpp"
+#include "UI\controls.hpp"
+
+class cfgFunctions 
+{
+	#include "Functions\cfgFunctions.hpp"
+};

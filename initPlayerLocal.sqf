@@ -1,0 +1,69 @@
+[] call BIS_fnc_showMissionStatus;
+
+params[ "_player", "_didJIP" ];
+
+if ( !_didJIP ) then {
+	
+	//Wait for mission to start
+	waitUntil{ time > 0 };
+	
+	//If a count down has not been started
+
+	if ( isNil "bis_fnc_countdown_time" ) then {
+		private _time = paramsArray select 1;
+		timeLeft = [ _time, true] call BIS_fnc_countdown;
+	}
+}; 
+
+waitUntil {!isNull player && !isNil "gameStarted"};
+if (!gameStarted) then {
+	sleep 0.1;	
+	player allowDamage false;
+	[player, false] remoteExec ["enableSimulationGlobal", 2];
+	["Please wait..."] call occupation_fnc_displayText;
+
+	// ======== ADD EVENT HANDLERS ========
+
+	player addEventHandler ["HandleRating", { 0 }]; // Disable rating system.
+	player addEventHandler ["HandleScore", {false}]; // Disable scoreboard update.
+
+	player addEventHandler ["Fired", {
+	if ( (_this select 2) isEqualTo "HandGrenade_Stone" ) then
+		{
+			(_this select 6) spawn
+			{
+				UIsleep 2.5;
+				deleteVehicle _this;
+			};
+		};
+	}];
+
+	// Add SIA Karma Event Handler
+	player addMPEventHandler ["MPKilled", {
+		params ["_unit", "_killer", "_instigator", "_useEffects"];
+		private _karma = [(side group _unit),(side group _instigator),[sideSecurity,sideInsurgent,sideCivilian]] call occupation_fnc_determineKarma;
+		[_karma] remoteExecCall ["occupation_fnc_updateKarma", _instigator];
+	}];
+
+
+	player linkItem "ItemGPS";
+ 
+
+} else {
+	sleep 0.1;
+	player setDamage 1;
+	1 cutText ["Game has already started! Please wait for the next one.","PLAIN",-1,true];
+};
+
+
+// Calculate Money
+waitUntil {!isNil "shopPriceCoeff"};
+myMoney = ([0] call occupation_fnc_updateKarma) * shopPriceMult;
+
+/*
+player addAction ["Test blue", {[bluforShopList] execVM "scripts\shop\openShop.sqf"}];
+player addAction ["Test CIv", {[civShopList] execVM "scripts\shop\openShop.sqf"}];
+player addAction ["Test bad", {[opforShopList] execVM "scripts\shop\openShop.sqf"}];
+*/
+
+execVM "changelog.sqf";

@@ -1,0 +1,1 @@
+["en", "pa"] call acre_api_fnc_babelSetSpokenLanguages; // Allow spectators to understand both languages.
