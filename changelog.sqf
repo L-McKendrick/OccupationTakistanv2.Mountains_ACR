@@ -5,7 +5,7 @@ player createDiarySubject ["changelog","Changelog"];
 private _txt = "";
 
 _txt = "<br></br>Initial Release";
-CHANGELOG("2.00",_txt,"Jun-15-2022");
+CHANGELOG("2.0",_txt,"Jun-15-2022");
 
 _txt = "
 	<br></br> Added:
@@ -23,7 +23,7 @@ _txt = "
 	<br></br> Fixed:
 	<br></br>    - Incorrect win/lose displayed.";
 
-CHANGELOG("2.01",_txt,"Jun-22-2022");
+CHANGELOG("2.1",_txt,"Jun-22-2022");
 
 _txt = "
 	<br></br> Added:
@@ -52,8 +52,33 @@ _txt = "
 	<br></br>    - CIVILIANs who joined the INSURGENT were still in array of innocent CIVILIANs.
 	<br></br>    - Buying equipment would also return false when purchasing.
 	<br></br>    - Issue with civilians not able to contact their insurgent contact.
-	<br></br><br></br>HOTFIX 2.02.1
+	<br></br><br></br>HOTFIX 2.2.1
 	<br></br>    - Fixed invicible players, final karma not working.
 ";
 
-CHANGELOG("2.02",_txt,"Jun-23-2022");
+CHANGELOG("2.2",_txt,"Jun-23-2022");
+
+_txt = "
+	<br></br> Added:
+	<br></br>    - ACE_CableTie to the Security shop.
+	<br></br>    - Ambient Civs will randomly have backpacks.
+	<br></br>    - A few decorative vehicles around the map.
+	<br></br>
+	<br></br> Tweaked:
+	<br></br>    - IEDs and Deadman's Switch are slightly more expensive in the INSURGENT shop.
+	<br></br>
+	<br></br> Improved:
+	<br></br>    - Shop will no longer automatically close after buying an item. Your current money will also update.
+	<br></br>    - Disabled ACE stamina in favor of vanilla.
+	<br></br>
+	<br></br> Fixed:
+	<br></br>    - Ambient countryside SFX was duplicated by client.
+	<br></br>    - A single INSURGENT could be contact by more than once CIVILIANs.
+	<br></br>    - The translator perk was free for CIVILIANs.
+	<br></br>    - Civilians were unable to see names of INSURGENT players.
+	<br></br>    - Karma not counting on kills.
+	<br></br>    - CIVILIANS were not considered winners when alive at mission end.
+	<br></br>    - INSURGENT radio not being given on game start.
+";
+
+CHANGELOG("2.3",_txt,"Jun-25-2022");

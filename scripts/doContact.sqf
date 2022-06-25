@@ -1,6 +1,6 @@
 params ["_unit"];
 
-_unit setVariable ["beenContacted", true];
+_unit setVariable ["beenContacted", true, true];
 
 "cMark" setMarkerAlphaLocal 1;
 

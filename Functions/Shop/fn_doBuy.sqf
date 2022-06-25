@@ -38,12 +38,14 @@ if (myMoney < _price) then {
 
 		case "equipment" : { _success =  _item call occupation_fnc_buyEquipment;  };
 
-		case "misc" : {  };
+		case "misc" : { _success = true };
 
 		default { ["Type not listed in config: %1", _id] call BIS_fnc_error };
 	};
 
 	if (!(_expression == "")) then { call compile _expression };
 
-	if (_success) then { myMoney = myMoney - _price; [("Purchased: " + _text + " for $" + str _price), "PLAIN DOWN"] call occupation_fnc_displayText; } else { ["Unable to buy this!", "PLAIN DOWN"] call occupation_fnc_displayText; };
+	if (_success) then { myMoney = myMoney - _price; [("Purchased " + _text + " for $" + str _price), "PLAIN DOWN"] call occupation_fnc_displayText; } else { ["Unable to buy this!", "PLAIN DOWN"] call occupation_fnc_displayText; };
 };
+
+ctrlSetText [1001, ('Your Money: $' + (str myMoney))]; // update shop money

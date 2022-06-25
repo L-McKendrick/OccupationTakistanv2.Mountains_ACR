@@ -2,7 +2,7 @@ params ["_winners","_ending"];
 
 private _victory = true;
 if (!(side group player in _winners)) then { _victory = false };
-if (side group player == sideCivilian && !alive player) then { _victory = false }; // Civilian player loses if they are dead.
+_victory = if (side group player == sideCivilian && !alive player) then [{false},{true}]; // Civilian player loses if they are dead, wins if they are alive.
 
 if (player in (redGuys + greenGuys + bluGuys)) then {
 	private _karma = 0;

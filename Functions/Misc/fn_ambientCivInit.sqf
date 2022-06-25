@@ -11,6 +11,8 @@ _unit addHeadgear (selectRandom ["UK3CB_TKC_H_Turban_01_1","UK3CB_TKC_H_Turban_0
 
 [_unit, selectRandom ["PersianHead_A3_01", "PersianHead_A3_02", "PersianHead_A3_03"]] remoteExec ["setFace", 0, _unit];
 
+if (floor random 4 == 1) then { _unit addBackpack  (selectRandom ["B_Messenger_Gray_F", "UK3CB_UN_B_B_ASS", "B_Carryall_khk"]) }; // Randomly give civilians a random backpack.
+
 _unit addMPEventHandler ["MPKilled", { 
   params ["_unit", "_killer", "_instigator", "_useEffects"];  
   [-1] remoteExecCall ["occupation_fnc_updateKarma", _instigator]; 

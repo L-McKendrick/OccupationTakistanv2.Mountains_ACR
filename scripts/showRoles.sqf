@@ -9,6 +9,7 @@ switch (side player) do {
 
 	case sideInsurgent : {
 		"cMark" setMarkerAlphaLocal 1;
+		player addItem civRadio;
 		_txt = "You are an INSURGENT";
 	};
 

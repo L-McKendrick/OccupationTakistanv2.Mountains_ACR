@@ -46,8 +46,7 @@ Civilians = createGroup resistance;
 
 	{
 		[_x] joinSilent Insurgents;
-		_x addItem civRadio;
-		_x setVariable ["beenContacted", false];
+		_x setVariable ["beenContacted", false, true];
 	} forEach redGuys;
 	
 

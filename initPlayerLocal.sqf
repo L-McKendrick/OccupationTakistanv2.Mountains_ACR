@@ -55,15 +55,15 @@ if (!gameStarted) then {
 	}];
 
 	// Add SIA Karma Event Handler
-	player addMPEventHandler ["MPKilled", {
+	player addEventHandler ["Killed", {
 		params ["_unit", "_killer", "_instigator", "_useEffects"];
 		private _karma = [(side group _unit),(side group _instigator),[sideSecurity,sideInsurgent,sideCivilian]] call occupation_fnc_determineKarma;
 		[_karma] remoteExecCall ["occupation_fnc_updateKarma", _instigator];
 	}];
 
-
+	// Starting stuff
 	player linkItem "ItemGPS";
- 
+	player addItem "FirstAidKit";
 
 } else {
 	sleep 0.1;
