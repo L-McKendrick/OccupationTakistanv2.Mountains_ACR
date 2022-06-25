@@ -52,6 +52,8 @@ _txt = "
 	<br></br>    - CIVILIANs who joined the INSURGENT were still in array of innocent CIVILIANs.
 	<br></br>    - Buying equipment would also return false when purchasing.
 	<br></br>    - Issue with civilians not able to contact their insurgent contact.
+	<br></br><br></br>HOTFIX 2.02.1
+	<br></br>    - Fixed invicible players, final karma not working.
 ";
 
 CHANGELOG("2.02",_txt,"Jun-23-2022");

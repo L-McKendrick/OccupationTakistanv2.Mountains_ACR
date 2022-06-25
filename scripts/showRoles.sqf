@@ -1,4 +1,5 @@
 ["Game started!"] call occupation_fnc_displayText;
+player allowDamage true;
 private _txt = "";
 private _karma = str ([0] call occupation_fnc_updateKarma);
 

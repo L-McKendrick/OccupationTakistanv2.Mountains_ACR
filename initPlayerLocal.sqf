@@ -1,4 +1,5 @@
 [] call BIS_fnc_showMissionStatus;
+execVM "changelog.sqf";
 
 params[ "_player", "_didJIP" ];
 
@@ -81,4 +82,3 @@ player addAction ["Test CIv", {[civShopList] execVM "scripts\shop\openShop.sqf"}
 player addAction ["Test bad", {[opforShopList] execVM "scripts\shop\openShop.sqf"}];
 */
 
-execVM "changelog.sqf";

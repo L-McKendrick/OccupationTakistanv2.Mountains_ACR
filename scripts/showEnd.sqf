@@ -15,4 +15,4 @@ if (player in (redGuys + greenGuys + bluGuys)) then {
 
 sleep 1;
 
-["\n\nFinal Karma:" + (str _karma)] call occupation_fnc_displayText;
+["\n\nFinal Karma:" + (str ([0] call occupation_fnc_updateKarma))] call occupation_fnc_displayText;

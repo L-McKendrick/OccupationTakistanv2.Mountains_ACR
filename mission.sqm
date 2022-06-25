@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=366;
+		nextID=375;
 	};
 	class Camera
 	{
-		pos[]={831.07159,281.96704,3593.1802};
-		dir[]={0.71687895,-0.57640535,-0.39222643};
-		up[]={0.50566697,0.81716388,-0.2766659};
-		aside[]={-0.479985,-1.4901161e-008,-0.87727672};
+		pos[]={937.93451,281.58707,3593.6428};
+		dir[]={0.093535475,-0.61541504,-0.78263485};
+		up[]={0.073030725,0.78820223,-0.61106664};
+		aside[]={-0.99293458,-1.0937583e-007,-0.11866906};
 	};
 };
 binarizationWanted=0;
-sourceName="OccupationTakistanv2";
+sourceName="occupationtakistanv2";
 addons[]=
 {
 	"ace_spectator",
@@ -12266,7 +12266,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={849.05695,218.66501,3555.241};
-						angles[]={-0,0,6.2819896};
+						angles[]={0,0,6.2819896};
 					};
 					side="Empty";
 					flags=4;
@@ -12535,7 +12535,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={870.88281,220.16757,3498.551};
-						angles[]={-0,0,6.2826972};
+						angles[]={0,0,6.2826972};
 					};
 					side="Empty";
 					flags=4;
@@ -12552,7 +12552,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={806.3418,219.51778,3511.3};
-						angles[]={-0,0,6.2820935};
+						angles[]={0,0,6.2820935};
 					};
 					side="Empty";
 					flags=4;
