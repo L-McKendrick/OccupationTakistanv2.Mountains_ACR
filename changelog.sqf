@@ -82,3 +82,21 @@ _txt = "
 ";
 
 CHANGELOG("2.3",_txt,"Jun-25-2022");
+
+_txt = "
+	<br></br> Added:
+	<br></br>    - Lobby paramter options for minimum/maximum Karma, default Karma percentage, and minimum/maximum OPFOR players.
+	<br></br>    - New location dubbed ''the slums'' along with several other new buildings around the map.
+	<br></br>
+	<br></br> Tweaked:
+	<br></br>    - Increased number of player slots for both sides.
+	<br></br>    - Losing a round will result in you losing 1/4 your karma.
+	<br></br>
+	<br></br> Improved:
+	<br></br>    - Shop price system now revamped to reflect karma settings.
+	<br></br>
+	<br></br> Fixed:
+	<br></br>    - isVictory check for non civilian players.
+";
+
+CHANGELOG("2.4",_txt,"Mar-26-2023");

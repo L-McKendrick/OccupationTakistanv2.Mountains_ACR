@@ -9,7 +9,7 @@
 		1 : Array
 			0 : Boolean - Enforce karma limit. (Default: false)
 			1 : Num - Minimum karma. (Default: 0)
-			2 : Num - Max karma. (Default: 10)
+			2 : Num - Max karma. (Default: 16)
 		2 : Boolean - Reset Karma to default. (Default: false)
 
 	Returns:
@@ -21,12 +21,15 @@
 if (!hasInterface) exitWith {};
 
 params [ 
-	"_numToAdd", ["_limitKarma", [false, 0, 10]], ["_resetKarma", false]
+	"_numToAdd", 
+	["_limitKarma", [false, karmaMin, karmaMax]], 
+	["_resetKarma", false],
+	["_defaultKarma", karmaDefault]
 ];
 
 if (_resetKarma) then { profileNamespace setVariable ["SIA_Occupation_Karma", nil] };
 
-private _karma = profileNamespace getVariable ["SIA_Occupation_Karma", 5];
+private _karma = profileNamespace getVariable ["SIA_Occupation_Karma", _defaultKarma]; 
 
 if (_numToAdd != 0) then {
 

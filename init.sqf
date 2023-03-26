@@ -1,5 +1,9 @@
 waitUntil {!isNull player};
 
+karmaMin = paramsArray select 4;
+karmaMax = paramsArray select 5;
+karmaDefault = [(karmaMax * ((paramsArray select 6) / 100)), 0] call BIS_fnc_cutDecimals;
+
 if (!(isDedicated)) then {
 	player addEventHandler ["inventoryOpened","_nul=execVM 'scripts\inventoryCheck.sqf'"];
 

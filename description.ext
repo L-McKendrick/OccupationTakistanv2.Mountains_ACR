@@ -1,6 +1,6 @@
 author = "McKendrick"; // Author
 onLoadName = "Occupation: Takistan";
-onLoadMission = "Security Forces attempt to indentify which civilians are supporters while Insurgent Forces attempt to eliminate them. Version: 2.3";
+onLoadMission = "Security Forces attempt to indentify which civilians are supporters while Insurgent Forces attempt to eliminate them. Version: 2.4";
 //loadScreen = "load.paa";
 //briefingName = "Occupation: Takistan v2.0";
 overviewPicture = "load.paa";
@@ -19,7 +19,7 @@ class Header
 	maxPlayers = 40;
 };
 
-disabledAI = 1;
+//disabledAI = 1;
 
 class Params
 {
@@ -34,8 +34,8 @@ class Params
 	class Countdown
 	{
 		title = "Time Avaliable";
-		values[] = {600,900,1200,1800};
-		texts[] = {"10 Minutes","15 Minutes","20 Minutes","30 Minutes"}; // Description of each selectable item
+		values[] = {300,600,900,1200,1800};
+		texts[] = {"5 Minutes","10 Minutes","15 Minutes","20 Minutes","30 Minutes"}; // Description of each selectable item
 		default = 900;
 	};
 	class PriceCoeff
@@ -51,7 +51,42 @@ class Params
 		values[] = {0,1};
 		texts[] = {"False","True"};
 		default = 0;
-	}
+	};
+	class karmaMinimum
+	{
+		title = "Minimum Karma";
+		values[] = {0,1};
+		texts[] = {"0","1"};
+		default = 0;
+	};
+	class karmaMaximum
+	{
+		title = "Maximum Karma";
+		values[] = {4,5,8,10,12,15,18,20,25,30};
+		texts[] = {"4","5","8","10","12","15","18","20","25","30"};
+		default = 12;
+	};
+	class karmaBase
+	{
+		title = "Default Karma (% of Maximum Karma)";
+		values[] = {25,33,5,66,75,100};
+		texts[] = {"25%", "33%", "50%", "66%", "75%", "100%"};
+		default = 33;
+	};
+	class OPFORSizeMax
+	{
+		title = "Prevent more OPFOR than BLUFOR?";
+		values[] = {0,1};
+		texts[] = {"False","True"};
+		default = 0;
+	};
+	class OPFORSizeMin
+	{
+		title = "Prevent more BLUFOR than OPFOR?";
+		values[] = {0,1};
+		texts[] = {"False","True"};
+		default = 0;
+	};
 };
 
 

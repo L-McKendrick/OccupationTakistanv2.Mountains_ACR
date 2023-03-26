@@ -14,14 +14,23 @@ Civilians = createGroup resistance;
 	//Set teams
 
 	bluGuys = [];
-	{if ((side _x) == west) then {bluGuys pushBack _x}} forEach playableUnits;
+	{if ((side _x) == west) then {bluGuys pushBack _x}} forEach playableUnits; // Create BLUFOR player group.
 
 	_civGuys = [];
 	{if ((side _x) == civilian) then {_civGuys pushBack _x}} forEach playableUnits;
-	_civGuys = _civGuys call BIS_fnc_arrayShuffle;
+	_civGuys = _civGuys call BIS_fnc_arrayShuffle; // Randomize civilian player order.
 
-	redGuys = _civGuys select [0, ((count _civGuys) / 3)];
-	greenGuys = _civGuys select [((count _civGuys) / 3), (count _civGuys)];
+	redGuys = _civGuys select [0, ((count _civGuys) / 3)]; // Create and select OPFOR player group.
+	
+	if ((paramsArray select 7) > 0) then {
+		if (count redGuys > count bluGuys) then { redGuys resize (count bluGuys) }; // Prevent there from being more OPFOR than BLUFOR.
+	};
+
+	if (((paramsArray select 8) > 0) && (count _civGuys > count bluGuys)) then {
+		if (count bluGuys > count redGuys) then { redGuys = +_civGuys; redGuys resize (count bluGuys) }; // Prevent there from being more BLUFOR than OPFOR.
+	};
+
+	greenGuys = (_civGuys - redGuys); // Create INDEP player group.
 	
 	sleep 2;
 
